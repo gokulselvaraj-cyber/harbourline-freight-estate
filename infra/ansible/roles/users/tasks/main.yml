@@ -1,0 +1,12 @@
+---
+- name: Ops users
+  ansible.builtin.user:
+    name: "{{ item.name }}"
+    groups: "{{ admin_group }}"
+    shell: /bin/bash
+  loop: "{{ ops_users }}"
+- name: Authorized keys
+  ansible.posix.authorized_key:
+    user: "{{ item.name }}"
+    key: "{{ item.pubkey_url }}"
+  loop: "{{ ops_users }}"

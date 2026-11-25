@@ -1,0 +1,9 @@
+---
+depot_code: TSB
+depot_name: Teesport
+depot_country: GB
+depot_locode: GBTEE
+timezone: Europe/London
+loading_docks: 6
+dispatch_cutoff: "14:00"
+label_printer: zpl-tsb-01.hf.internal

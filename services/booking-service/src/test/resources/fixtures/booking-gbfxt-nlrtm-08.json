@@ -1,0 +1,30 @@
+{
+  "shipperAccount": "HFA10076",
+  "origin": "GBFXT",
+  "destination": "NLRTM",
+  "mode": "SEA",
+  "equipment": "40HC",
+  "units": 1,
+  "readyDate": "2026-11-14",
+  "receiver": {
+    "name": "TEST-CONSIGNEE-0008",
+    "company": null,
+    "phone": "+44 7700 900108",
+    "email": "consignee0008@example.com",
+    "address": "8 Test Street",
+    "city": "Testville",
+    "postcode": "ZZ99 9ZZ",
+    "country": "NL",
+    "eori": null
+  },
+  "items": [
+    {
+      "description": "Ceramic floor tiles",
+      "hsCode": "690721",
+      "packages": 24,
+      "grossKg": 980.0,
+      "volumeM3": 1.6,
+      "dangerous": false
+    }
+  ]
+}

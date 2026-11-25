@@ -1,0 +1,10 @@
+depot_code,name,country,locode,docks,cut_off,manager
+FXT,Felixstowe,GB,GBFXT,14,14:00,Depot manager FXT
+IMM,Immingham,GB,GBIMM,9,14:00,Depot manager IMM
+TSB,Teesport,GB,GBTEE,6,14:00,Depot manager TSB
+RTM,Rotterdam,NL,NLRTM,18,15:30,Depot manager RTM
+ANT,Antwerpen,BE,BEANR,11,15:30,Depot manager ANT
+ZEE,Zeebrügge,BE,BEZEE,5,15:30,Depot manager ZEE
+HAM,Hamburg,DE,DEHAM,12,15:30,Depot manager HAM
+GDY,Gdynia,PL,PLGDY,7,15:30,Depot manager GDY
+GOT,Göteborg (agent),SE,SEGOT,0,15:30,Agent - not our depot

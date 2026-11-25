@@ -1,0 +1,17 @@
+{
+  "origin": "NLRTM",
+  "destination": "DEHAM",
+  "mode": "ROAD",
+  "equipment": "GRP",
+  "units": 1,
+  "onDate": "2026-10-01",
+  "items": [
+    {
+      "description": "Mixed pallets",
+      "packages": 15,
+      "grossKg": 15000,
+      "volumeM3": 37.5,
+      "dangerous": false
+    }
+  ]
+}

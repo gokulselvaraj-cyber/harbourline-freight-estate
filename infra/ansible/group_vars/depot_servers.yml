@@ -1,0 +1,6 @@
+---
+depot_scanner_port: 7010
+depot_scanner_version: "3.2.0"
+depot_scanner_upstream: "http://booking.hf.internal:{{ booking_service_port }}"
+scanner_devices_max: 24
+open_ports: ["{{ depot_scanner_port }}"]

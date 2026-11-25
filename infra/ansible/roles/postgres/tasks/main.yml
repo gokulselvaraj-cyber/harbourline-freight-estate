@@ -1,0 +1,29 @@
+---
+- name: Install postgres
+  ansible.builtin.apt:
+    name: "postgresql-{{ postgres_version }}"
+- name: postgresql.conf
+  ansible.builtin.template:
+    src: postgresql.conf.j2
+    dest: "/etc/postgresql/{{ postgres_version }}/main/postgresql.conf"
+  notify: restart postgres
+- name: pg_hba.conf
+  ansible.builtin.template:
+    src: pg_hba.conf.j2
+    dest: "/etc/postgresql/{{ postgres_version }}/main/pg_hba.conf"
+  notify: reload postgres
+- name: Databases
+  become_user: postgres
+  community.postgresql.postgresql_db:
+    name: "{{ item }}"
+  loop: ["{{ booking_db_name }}", "{{ tracking_db_name }}"]
+- name: App users
+  become_user: postgres
+  community.postgresql.postgresql_user:
+    name: "{{ item.user }}"
+    password: "{{ item.password }}"
+    db: "{{ item.db }}"
+  loop:
+    - {user: "{{ db_user_booking }}", password: "{{ db_password_booking }}", db: "{{ booking_db_name }}"}
+    - {user: "{{ db_user_tracking }}", password: "{{ db_password_tracking }}", db: "{{ tracking_db_name }}"}
+  no_log: true

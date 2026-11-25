@@ -1,0 +1,2 @@
+---
+booking_service_exec: "/usr/bin/java $JAVA_OPTS -jar booking-service.jar"

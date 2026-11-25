@@ -1,0 +1,2 @@
+---
+customs_docs_exec: "/usr/bin/node dist/server.js"

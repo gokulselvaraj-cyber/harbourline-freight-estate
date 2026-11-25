@@ -1,0 +1,2 @@
+---
+depot_scanner_listen_port: "{{ depot_scanner_port }}"

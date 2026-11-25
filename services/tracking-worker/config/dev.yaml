@@ -1,0 +1,15 @@
+env: dev
+db:
+  host: localhost
+  name: tracking
+  user: tracking_app
+  password: ${TRACKING_DB_PASSWORD}
+rabbit:
+  host: localhost
+  vhost: /hf
+  prefetch: 10
+eta:
+  sea_port_dwell_hours: 6
+  road_border_buffer_hours: 4
+  notify_threshold_hours: 2
+concurrency: 1

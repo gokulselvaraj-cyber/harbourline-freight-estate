@@ -1,0 +1,9 @@
+[scanner]
+depot = {{ depot_code }}
+listen_port = {{ depot_scanner_listen_port }}
+max_devices = {{ scanner_devices_max | default(16) }}
+timezone = {{ timezone }}
+
+[upstream]
+url = {{ depot_scanner_upstream }}
+timeout_s = 5

@@ -1,0 +1,46 @@
+---
+# Full converge for one environment: ansible-playbook -i inventories/<env>/hosts.ini site.yml
+- name: Baseline for every host
+  hosts: all
+  become: true
+  roles:
+    - common
+    - users
+    - firewall
+    - node_exporter
+    - logrotate
+
+- name: Database
+  hosts: db_servers
+  become: true
+  roles:
+    - postgres
+    - pg_backup
+
+- name: Message broker
+  hosts: mq_servers
+  become: true
+  roles:
+    - rabbitmq
+
+- name: Application servers
+  hosts: app_servers
+  become: true
+  roles:
+    - booking_service
+    - customs_docs
+    - tracking_worker
+
+- name: Edge proxy
+  hosts: edge
+  become: true
+  roles:
+    - certs
+    - nginx
+
+- name: Depot servers
+  hosts: depot_servers
+  become: true
+  serial: 2
+  roles:
+    - depot_scanner

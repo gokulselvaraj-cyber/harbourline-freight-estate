@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    url: jdbc:tc:postgresql:15:///booking
+harbourline:
+  rating:
+    fuel-surcharge-pct: 0
+  customs-docs:
+    base-url: http://localhost:3999

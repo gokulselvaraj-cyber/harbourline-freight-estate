@@ -1,0 +1,16 @@
+name: booking-service
+on:
+  pull_request:
+    paths: ["services/booking-service/**"]
+  push:
+    branches: [main]
+    paths: ["services/booking-service/**"]
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with: {distribution: temurin, java-version: "17"}
+      - run: ./mvnw -B verify
+        working-directory: services/booking-service

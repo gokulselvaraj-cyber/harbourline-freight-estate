@@ -1,0 +1,16 @@
+name: tracking-worker
+on:
+  pull_request:
+    paths: ["services/tracking-worker/**"]
+  push:
+    branches: [main]
+    paths: ["services/tracking-worker/**"]
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: make install test
+        working-directory: services/tracking-worker

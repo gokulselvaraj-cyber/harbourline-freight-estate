@@ -1,0 +1,16 @@
+{
+ "title": "depots",
+ "schemaVersion": 38,
+ "panels": [
+  {
+   "id": 1,
+   "type": "timeseries",
+   "title": "Scanner bridges up"
+  },
+  {
+   "id": 2,
+   "type": "timeseries",
+   "title": "Dispatch slots used per depot"
+  }
+ ]
+}

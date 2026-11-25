@@ -1,0 +1,30 @@
+{
+  "shipperAccount": "HFA10048",
+  "origin": "GBTEE",
+  "destination": "PLGDY",
+  "mode": "SEA",
+  "equipment": "40GP",
+  "units": 1,
+  "readyDate": "2026-07-21",
+  "receiver": {
+    "name": "TEST-CONSIGNEE-0004",
+    "company": null,
+    "phone": "+44 7700 900104",
+    "email": "consignee0004@example.com",
+    "address": "4 Test Street",
+    "city": "Testville",
+    "postcode": "ZZ99 9ZZ",
+    "country": "PL",
+    "eori": null
+  },
+  "items": [
+    {
+      "description": "Steel fasteners",
+      "hsCode": "731815",
+      "packages": 40,
+      "grossKg": 7300.0,
+      "volumeM3": 4.1,
+      "dangerous": false
+    }
+  ]
+}

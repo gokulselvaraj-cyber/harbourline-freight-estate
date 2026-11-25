@@ -1,0 +1,22 @@
+{
+  "bookingRef": "HLF-26-FXSE01",
+  "exporterEori": "GB000000000000",
+  "origin": "GBFXT",
+  "destination": "SEGOT",
+  "shipTo": {
+    "name": "TEST-CONSIGNEE-SE01",
+    "address": "1 Test Street",
+    "city": "Testville",
+    "postcode": "ZZ99 9ZZ",
+    "country": "SE"
+  },
+  "items": [
+    {
+      "description": "Spirits",
+      "hsCode": "220830",
+      "packages": 10,
+      "grossKg": 2400,
+      "volumeM3": 3.0
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "bookingRef": "HLF-26-FXIE01",
+  "exporterEori": "GB000000000000",
+  "origin": "GBFXT",
+  "destination": "IEDUB",
+  "shipTo": {
+    "name": "TEST-CONSIGNEE-IE01",
+    "address": "1 Test Street",
+    "city": "Testville",
+    "postcode": "ZZ99 9ZZ",
+    "country": "IE"
+  },
+  "items": [
+    {
+      "description": "Garden furniture",
+      "hsCode": "940379",
+      "packages": 10,
+      "grossKg": 880,
+      "volumeM3": 11.5
+    }
+  ]
+}

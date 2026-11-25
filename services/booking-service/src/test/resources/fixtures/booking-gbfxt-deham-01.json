@@ -1,0 +1,30 @@
+{
+  "shipperAccount": "HFA10027",
+  "origin": "GBFXT",
+  "destination": "DEHAM",
+  "mode": "SEA",
+  "equipment": "20GP",
+  "units": 1,
+  "readyDate": "2026-04-06",
+  "receiver": {
+    "name": "TEST-CONSIGNEE-0001",
+    "company": "Example Receiver 1 BV",
+    "phone": "+44 7700 900101",
+    "email": "consignee0001@example.com",
+    "address": "1 Test Street",
+    "city": "Testville",
+    "postcode": "ZZ99 9ZZ",
+    "country": "DE",
+    "eori": null
+  },
+  "items": [
+    {
+      "description": "Office chairs",
+      "hsCode": "940130",
+      "packages": 120,
+      "grossKg": 1650.0,
+      "volumeM3": 21.0,
+      "dangerous": false
+    }
+  ]
+}

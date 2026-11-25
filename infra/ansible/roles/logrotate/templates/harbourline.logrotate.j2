@@ -1,0 +1,7 @@
+/var/log/harbourline/*.log {
+    daily
+    rotate {{ log_keep_days | default(14) }}
+    compress
+    missingok
+    copytruncate
+}

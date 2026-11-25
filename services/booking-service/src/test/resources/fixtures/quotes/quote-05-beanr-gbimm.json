@@ -1,0 +1,17 @@
+{
+  "origin": "BEANR",
+  "destination": "GBIMM",
+  "mode": "ROAD",
+  "equipment": "GRP",
+  "units": 1,
+  "onDate": "2026-10-01",
+  "items": [
+    {
+      "description": "Mixed pallets",
+      "packages": 9,
+      "grossKg": 1800,
+      "volumeM3": 4.5,
+      "dangerous": false
+    }
+  ]
+}

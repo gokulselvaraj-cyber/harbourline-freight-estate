@@ -1,0 +1,7 @@
+<h1>Packing list</h1>
+<p>Booking {{bookingRef}}</p>
+<ol>
+{{#each lines}}
+  <li>{{packages}} x {{description}} ({{volumeM3}} m3, chargeable {{chargeableKg}} kg)</li>
+{{/each}}
+</ol>

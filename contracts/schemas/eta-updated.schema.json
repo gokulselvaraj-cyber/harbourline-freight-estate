@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.harbourline.example/eta-updated.v1.json",
+  "title": "eta-updated",
+  "type": "object",
+  "required": [
+    "bookingRef",
+    "eta",
+    "source"
+  ],
+  "properties": {
+    "bookingRef": {
+      "type": "string"
+    },
+    "eta": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string"
+    }
+  }
+}

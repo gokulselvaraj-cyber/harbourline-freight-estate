@@ -1,0 +1,31 @@
+services:
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_PASSWORD: ${LOCAL_PG_PASSWORD}
+    ports: ["5432:5432"]
+  rabbitmq:
+    image: rabbitmq:3.13-management
+    ports: ["5672:5672", "15672:15672"]
+  booking-service:
+    build: ./services/booking-service
+    environment:
+      SPRING_PROFILES_ACTIVE: dev
+      DB_URL: jdbc:postgresql://postgres:5432/booking
+      DB_PASSWORD: ${LOCAL_PG_PASSWORD}
+      RABBIT_HOST: rabbitmq
+    ports: ["8080:8080"]
+    depends_on: [postgres, rabbitmq]
+  customs-docs:
+    build: ./services/customs-docs
+    environment:
+      NODE_ENV: development
+      PORT: "3000"
+    ports: ["3000:3000"]
+  tracking-worker:
+    build: ./services/tracking-worker
+    environment:
+      HF_ENV: dev
+      TRACKING_DB_DSN: postgresql://postgres:${LOCAL_PG_PASSWORD}@postgres:5432/tracking
+      RABBIT_URL: amqp://guest:guest@rabbitmq:5672/%2Fhf
+    ports: ["9102:9102"]

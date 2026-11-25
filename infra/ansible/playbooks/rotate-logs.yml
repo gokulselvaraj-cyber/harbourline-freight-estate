@@ -1,0 +1,7 @@
+---
+- name: Force log rotation on app servers
+  hosts: app_servers
+  become: true
+  tasks:
+    - name: Rotate
+      ansible.builtin.command: logrotate -f /etc/logrotate.d/harbourline

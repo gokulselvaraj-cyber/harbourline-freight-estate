@@ -1,0 +1,9 @@
+---
+depot_code: HAM
+depot_name: Hamburg
+depot_country: DE
+depot_locode: DEHAM
+timezone: Europe/Berlin
+loading_docks: 12
+dispatch_cutoff: "15:30"
+label_printer: zpl-ham-01.hf.internal

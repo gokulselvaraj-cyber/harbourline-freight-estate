@@ -1,0 +1,9 @@
+service: booking-service
+slos:
+  - name: create-booking-availability
+    objective: 99.5
+    window: 28d
+    sli: {good: 'status!~"5.."', total: 'uri="/v1/bookings"'}
+  - name: quote-latency
+    objective: 95
+    threshold_ms: 800

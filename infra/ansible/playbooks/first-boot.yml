@@ -1,0 +1,15 @@
+---
+- name: First boot of a fresh host (run once, as root)
+  hosts: "{{ target | default('all') }}"
+  become: true
+  gather_facts: true
+  tasks:
+    - name: Create admin group
+      ansible.builtin.group:
+        name: "{{ admin_group }}"
+    - name: Install python for ansible
+      ansible.builtin.raw: test -e /usr/bin/python3 || (apt-get update && apt-get install -y python3)
+      changed_when: false
+    - name: Apply baseline
+      ansible.builtin.include_role:
+        name: common

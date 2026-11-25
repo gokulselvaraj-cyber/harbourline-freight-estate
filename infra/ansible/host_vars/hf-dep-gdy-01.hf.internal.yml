@@ -1,0 +1,9 @@
+---
+depot_code: GDY
+depot_name: Gdynia
+depot_country: PL
+depot_locode: PLGDY
+timezone: Europe/Warsaw
+loading_docks: 7
+dispatch_cutoff: "15:30"
+label_printer: zpl-gdy-01.hf.internal

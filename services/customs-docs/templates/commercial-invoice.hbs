@@ -1,0 +1,8 @@
+<h1>Commercial invoice</h1>
+<p>Declaration {{declarationRef}} &middot; Booking {{bookingRef}} &middot; {{type}}</p>
+<table>
+  <tr><th>Description</th><th>HS code</th><th>Packages</th><th>Gross kg</th></tr>
+  {{#each lines}}
+  <tr><td>{{description}}</td><td>{{hsCode}}</td><td>{{packages}}</td><td>{{grossKg}}</td></tr>
+  {{/each}}
+</table>

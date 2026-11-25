@@ -1,0 +1,17 @@
+{
+  "origin": "GBIMM",
+  "destination": "DEHAM",
+  "mode": "SEA",
+  "equipment": "20GP",
+  "units": 2,
+  "onDate": "2026-10-01",
+  "items": [
+    {
+      "description": "Mixed pallets",
+      "packages": 6,
+      "grossKg": 350,
+      "volumeM3": 0.88,
+      "dangerous": false
+    }
+  ]
+}

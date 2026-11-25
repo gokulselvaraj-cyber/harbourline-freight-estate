@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    hikari:
+      maximum-pool-size: 30
+harbourline:
+  rating:
+    # HF-2087: raised from 12.5 with the Q4 2026 bunker index
+    fuel-surcharge-pct: 14.0
+  customs-docs:
+    base-url: http://customs-docs.hf.internal:3100
+    read-timeout: 4s
+logging:
+  level:
+    root: INFO

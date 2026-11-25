@@ -1,0 +1,122 @@
+openapi: 3.0.3
+info:
+  title: Harbourline Booking API
+  version: 1.4.0
+servers:
+  - url: https://portal.harbourline.example/api
+paths:
+  /v1/bookings:
+    post:
+      operationId: createBooking
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/CreateBookingRequest'}
+      responses:
+        '201': {description: Created, content: {application/json: {schema: {$ref: '#/components/schemas/BookingResponse'}}}}
+        '400': {description: Validation error}
+        '422': {description: Lane not served or no tariff}
+  /v1/bookings/{bookingRef}:
+    get:
+      operationId: getBooking
+      parameters: [{name: bookingRef, in: path, required: true, schema: {type: string}}]
+      responses:
+        '200': {description: OK, content: {application/json: {schema: {$ref: '#/components/schemas/BookingResponse'}}}}
+        '404': {description: Not found}
+  /v1/bookings/{bookingRef}/amend:
+    post:
+      operationId: amendBooking
+      description: Change ready date or cargo lines before dispatch.
+      parameters: [{name: bookingRef, in: path, required: true, schema: {type: string}}]
+      requestBody:
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/AmendBookingRequest'}
+      responses:
+        '200': {description: Amended}
+  /v1/quotes:
+    post:
+      operationId: createQuote
+      requestBody:
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/QuoteRequest'}
+      responses:
+        '200': {description: Quote, content: {application/json: {schema: {$ref: '#/components/schemas/Quote'}}}}
+  /v1/lanes:
+    get:
+      operationId: listLanes
+      responses:
+        '200': {description: Active lanes}
+components:
+  schemas:
+    CargoLine:
+      type: object
+      required: [description, packages, grossKg, volumeM3]
+      properties:
+        description: {type: string}
+        hsCode: {type: string}
+        packages: {type: integer}
+        grossKg: {type: number}
+        volumeM3: {type: number}
+        dangerous: {type: boolean}
+    Receiver:
+      type: object
+      description: The consignee (person or company receiving the goods).
+      required: [name, address, city, postcode, country]
+      properties:
+        name: {type: string}
+        company: {type: string}
+        phone: {type: string}
+        email: {type: string, format: email}
+        address: {type: string}
+        city: {type: string}
+        postcode: {type: string}
+        country: {type: string, minLength: 2, maxLength: 2}
+        eori: {type: string}
+    CreateBookingRequest:
+      type: object
+      required: [shipperAccount, origin, destination, mode, equipment, units, readyDate, receiver, items]
+      properties:
+        shipperAccount: {type: string}
+        origin: {type: string, description: UN/LOCODE}
+        destination: {type: string}
+        mode: {type: string, enum: [SEA, ROAD]}
+        equipment: {type: string, enum: [20GP, 40GP, 40HC, LCL, TRL136, GRP]}
+        units: {type: integer, minimum: 1}
+        readyDate: {type: string, format: date}
+        receiver: {$ref: '#/components/schemas/Receiver'}
+        items: {type: array, items: {$ref: '#/components/schemas/CargoLine'}}
+    AmendBookingRequest:
+      type: object
+      properties:
+        readyDate: {type: string, format: date}
+        items: {type: array, items: {$ref: '#/components/schemas/CargoLine'}}
+    BookingResponse:
+      type: object
+      properties:
+        bookingRef: {type: string, example: HLF-26-7Q4K2M}
+        status: {type: string}
+        quotedTotal: {type: number}
+        currency: {type: string}
+        customsRef: {type: string}
+    QuoteRequest:
+      type: object
+      properties:
+        origin: {type: string}
+        destination: {type: string}
+        mode: {type: string}
+        equipment: {type: string}
+        units: {type: integer}
+        onDate: {type: string, format: date}
+        items: {type: array, items: {$ref: '#/components/schemas/CargoLine'}}
+    Quote:
+      type: object
+      properties:
+        base: {type: number}
+        fuelSurcharge: {type: number}
+        customsFee: {type: number}
+        total: {type: number}
+        transitDays: {type: integer}
+        weightBand: {type: integer}

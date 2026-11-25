@@ -1,0 +1,14 @@
+---
+- name: Install nginx
+  ansible.builtin.apt:
+    name: nginx
+- name: Edge site
+  ansible.builtin.template:
+    src: hf-edge.conf.j2
+    dest: /etc/nginx/sites-enabled/hf-edge.conf
+  notify: reload nginx
+- name: Remove default site
+  ansible.builtin.file:
+    path: /etc/nginx/sites-enabled/default
+    state: absent
+  notify: reload nginx

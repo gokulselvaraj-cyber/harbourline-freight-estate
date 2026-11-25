@@ -1,0 +1,9 @@
+---
+depot_code: FXT
+depot_name: Felixstowe
+depot_country: GB
+depot_locode: GBFXT
+timezone: Europe/London
+loading_docks: 14
+dispatch_cutoff: "14:00"
+label_printer: zpl-fxt-01.hf.internal

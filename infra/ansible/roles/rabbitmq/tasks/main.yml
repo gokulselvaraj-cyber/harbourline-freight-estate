@@ -1,0 +1,14 @@
+---
+- name: Install rabbitmq
+  ansible.builtin.apt:
+    name: rabbitmq-server
+- name: Definitions
+  ansible.builtin.template:
+    src: definitions.json.j2
+    dest: /etc/rabbitmq/definitions.json
+  notify: restart rabbitmq
+- name: rabbitmq.conf
+  ansible.builtin.template:
+    src: rabbitmq.conf.j2
+    dest: /etc/rabbitmq/rabbitmq.conf
+  notify: restart rabbitmq

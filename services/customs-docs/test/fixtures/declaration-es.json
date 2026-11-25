@@ -1,0 +1,22 @@
+{
+  "bookingRef": "HLF-26-FXES01",
+  "exporterEori": "GB000000000000",
+  "origin": "GBFXT",
+  "destination": "ESBIO",
+  "shipTo": {
+    "name": "TEST-CONSIGNEE-ES01",
+    "address": "1 Test Street",
+    "city": "Testville",
+    "postcode": "ZZ99 9ZZ",
+    "country": "ES"
+  },
+  "items": [
+    {
+      "description": "Wine in bottles",
+      "hsCode": "220421",
+      "packages": 10,
+      "grossKg": 9800,
+      "volumeM3": 18.4
+    }
+  ]
+}

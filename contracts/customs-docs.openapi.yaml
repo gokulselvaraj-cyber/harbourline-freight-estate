@@ -1,0 +1,71 @@
+openapi: 3.0.3
+info:
+  title: Harbourline Customs Docs API
+  version: 2.3.0
+servers:
+  - url: http://customs-docs.hf.internal:3100
+    description: production (internal only)
+paths:
+  /v1/declarations:
+    post:
+      operationId: createDeclaration
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/DeclarationRequest'}
+      responses:
+        '201': {description: Submitted to broker}
+        '400': {description: Invalid}
+        '502': {description: Broker or classifier failed}
+  /v1/declarations/{ref}:
+    get:
+      operationId: getDeclaration
+      parameters: [{name: ref, in: path, required: true, schema: {type: string}}]
+      responses:
+        '200': {description: Declaration}
+        '404': {description: Not found}
+  /v1/declarations/{ref}/documents/{doc}:
+    get:
+      operationId: renderDocument
+      parameters:
+        - {name: ref, in: path, required: true, schema: {type: string}}
+        - {name: doc, in: path, required: true, schema: {type: string, enum: [commercial-invoice, packing-list, t1-transit]}}
+      responses:
+        '200': {description: HTML document}
+  /health:
+    get:
+      responses:
+        '200': {description: UP}
+components:
+  schemas:
+    ShipTo:
+      type: object
+      required: [name, address, city, postcode, country]
+      properties:
+        name: {type: string}
+        company: {type: string}
+        address: {type: string}
+        city: {type: string}
+        postcode: {type: string}
+        country: {type: string}
+        eori: {type: string}
+    DeclarationRequest:
+      type: object
+      required: [bookingRef, exporterEori, origin, destination, shipTo, items]
+      properties:
+        bookingRef: {type: string}
+        exporterEori: {type: string}
+        origin: {type: string}
+        destination: {type: string}
+        shipTo: {$ref: '#/components/schemas/ShipTo'}
+        items:
+          type: array
+          items:
+            type: object
+            properties:
+              description: {type: string}
+              hsCode: {type: string}
+              packages: {type: integer}
+              grossKg: {type: number}
+              volumeM3: {type: number}

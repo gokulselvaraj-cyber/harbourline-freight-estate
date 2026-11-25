@@ -1,0 +1,3 @@
+---
+nginx_worker_connections: 1024
+edge_public_name: localhost

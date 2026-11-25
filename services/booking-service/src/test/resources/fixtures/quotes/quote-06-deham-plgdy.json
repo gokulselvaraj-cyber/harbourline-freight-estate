@@ -1,0 +1,17 @@
+{
+  "origin": "DEHAM",
+  "destination": "PLGDY",
+  "mode": "ROAD",
+  "equipment": "GRP",
+  "units": 1,
+  "onDate": "2026-10-01",
+  "items": [
+    {
+      "description": "Mixed pallets",
+      "packages": 10,
+      "grossKg": 9000,
+      "volumeM3": 22.5,
+      "dangerous": false
+    }
+  ]
+}

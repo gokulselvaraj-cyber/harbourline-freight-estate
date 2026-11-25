@@ -1,0 +1,17 @@
+{
+  "origin": "ESBIO",
+  "destination": "GBSOU",
+  "mode": "SEA",
+  "equipment": "LCL",
+  "units": 1,
+  "onDate": "2026-10-01",
+  "items": [
+    {
+      "description": "Mixed pallets",
+      "packages": 13,
+      "grossKg": 1800,
+      "volumeM3": 4.5,
+      "dangerous": false
+    }
+  ]
+}

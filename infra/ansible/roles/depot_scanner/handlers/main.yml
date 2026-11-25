@@ -1,0 +1,3 @@
+---
+- name: restart scanner
+  ansible.builtin.service: {name: hf-depot-scanner, state: restarted}

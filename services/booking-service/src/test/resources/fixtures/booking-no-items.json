@@ -1,0 +1,17 @@
+{
+  "shipperAccount": "HFA10020",
+  "origin": "GBFXT",
+  "destination": "NLRTM",
+  "mode": "SEA",
+  "equipment": "40HC",
+  "units": 1,
+  "readyDate": "2026-04-01",
+  "receiver": {
+    "name": "TEST-CONSIGNEE-0000",
+    "address": "1 Test Street",
+    "city": "Testville",
+    "postcode": "ZZ99 9ZZ",
+    "country": "NL"
+  },
+  "items": []
+}

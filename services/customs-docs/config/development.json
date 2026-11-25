@@ -1,0 +1,5 @@
+{
+  "hsClassifier": {
+    "endpoint": "http://localhost:8787/v1/classify"
+  }
+}

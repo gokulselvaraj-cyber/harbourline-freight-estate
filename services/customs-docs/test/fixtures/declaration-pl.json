@@ -1,0 +1,22 @@
+{
+  "bookingRef": "HLF-26-FXPL01",
+  "exporterEori": "GB000000000000",
+  "origin": "GBFXT",
+  "destination": "PLGDY",
+  "shipTo": {
+    "name": "TEST-CONSIGNEE-PL01",
+    "address": "1 Test Street",
+    "city": "Testville",
+    "postcode": "ZZ99 9ZZ",
+    "country": "PL"
+  },
+  "items": [
+    {
+      "description": "Steel fasteners",
+      "hsCode": "731815",
+      "packages": 10,
+      "grossKg": 7300,
+      "volumeM3": 4.1
+    }
+  ]
+}

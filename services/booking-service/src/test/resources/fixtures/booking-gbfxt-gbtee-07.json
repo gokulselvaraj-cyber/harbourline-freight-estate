@@ -1,0 +1,30 @@
+{
+  "shipperAccount": "HFA10069",
+  "origin": "GBFXT",
+  "destination": "GBTEE",
+  "mode": "ROAD",
+  "equipment": "GRP",
+  "units": 1,
+  "readyDate": "2026-10-09",
+  "receiver": {
+    "name": "TEST-CONSIGNEE-0007",
+    "company": "Example Receiver 7 BV",
+    "phone": "+44 7700 900107",
+    "email": "consignee0007@example.com",
+    "address": "7 Test Street",
+    "city": "Testville",
+    "postcode": "ZZ99 9ZZ",
+    "country": "GB",
+    "eori": null
+  },
+  "items": [
+    {
+      "description": "Wine in bottles",
+      "hsCode": "220421",
+      "packages": 52,
+      "grossKg": 9800.0,
+      "volumeM3": 18.4,
+      "dangerous": false
+    }
+  ]
+}

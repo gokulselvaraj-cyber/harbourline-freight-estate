@@ -1,0 +1,11 @@
+groups:
+  - name: booking-service
+    rules:
+      - alert: BookingHighErrorRate
+        expr: sum(rate(http_server_requests_seconds_count{job="booking-service",status=~"5.."}[5m])) > 0.5
+        for: 10m
+        labels: {severity: page, team: booking}
+      - alert: CustomsPendingBacklog
+        expr: hf_booking_customs_pending > 50
+        for: 30m
+        labels: {severity: ticket, team: trade-docs}

@@ -1,0 +1,22 @@
+{
+  "bookingRef": "HLF-26-FXNL01",
+  "exporterEori": "GB000000000000",
+  "origin": "GBFXT",
+  "destination": "NLRTM",
+  "shipTo": {
+    "name": "TEST-CONSIGNEE-NL01",
+    "address": "1 Test Street",
+    "city": "Testville",
+    "postcode": "ZZ99 9ZZ",
+    "country": "NL"
+  },
+  "items": [
+    {
+      "description": "Ceramic floor tiles",
+      "hsCode": "690721",
+      "packages": 10,
+      "grossKg": 980,
+      "volumeM3": 1.6
+    }
+  ]
+}

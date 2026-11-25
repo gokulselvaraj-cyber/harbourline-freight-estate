@@ -1,0 +1,30 @@
+{
+  "shipperAccount": "HFA10041",
+  "origin": "NLRTM",
+  "destination": "GBFXT",
+  "mode": "SEA",
+  "equipment": "LCL",
+  "units": 2,
+  "readyDate": "2026-06-16",
+  "receiver": {
+    "name": "TEST-CONSIGNEE-0003",
+    "company": "Example Receiver 3 BV",
+    "phone": "+44 7700 900103",
+    "email": "consignee0003@example.com",
+    "address": "3 Test Street",
+    "city": "Testville",
+    "postcode": "ZZ99 9ZZ",
+    "country": "GB",
+    "eori": null
+  },
+  "items": [
+    {
+      "description": "Bicycle parts",
+      "hsCode": "871499",
+      "packages": 60,
+      "grossKg": 410.0,
+      "volumeM3": 3.2,
+      "dangerous": false
+    }
+  ]
+}

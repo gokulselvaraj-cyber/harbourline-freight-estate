@@ -1,0 +1,15 @@
+---
+# Depot scanner bridge v2 - kept for rollback, see CHG-3902.
+- name: Scanner bridge package
+  ansible.builtin.apt:
+    deb: "https://artifacts.hf.internal/depot-scanner/{{ depot_scanner_version }}/hf-depot-scanner.deb"
+- name: Scanner config
+  ansible.builtin.template:
+    src: scanner.ini.j2
+    dest: /etc/hf-depot-scanner/scanner.ini
+  notify: restart scanner
+- name: Service
+  ansible.builtin.service:
+    name: hf-depot-scanner
+    enabled: true
+    state: started

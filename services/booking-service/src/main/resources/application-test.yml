@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://hf-db-01.test.hf.internal:5432/booking
+harbourline:
+  customs-docs:
+    base-url: http://customs-docs.test.hf.internal:3000

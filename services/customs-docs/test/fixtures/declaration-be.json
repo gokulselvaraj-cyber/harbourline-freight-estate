@@ -1,0 +1,22 @@
+{
+  "bookingRef": "HLF-26-FXBE01",
+  "exporterEori": "GB000000000000",
+  "origin": "GBFXT",
+  "destination": "BEANR",
+  "shipTo": {
+    "name": "TEST-CONSIGNEE-BE01",
+    "address": "1 Test Street",
+    "city": "Testville",
+    "postcode": "ZZ99 9ZZ",
+    "country": "BE"
+  },
+  "items": [
+    {
+      "description": "Office chairs",
+      "hsCode": "940130",
+      "packages": 10,
+      "grossKg": 1650,
+      "volumeM3": 21
+    }
+  ]
+}

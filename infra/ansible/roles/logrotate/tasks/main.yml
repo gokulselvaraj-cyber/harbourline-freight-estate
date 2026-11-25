@@ -1,0 +1,5 @@
+---
+- name: Logrotate for harbourline services
+  ansible.builtin.template:
+    src: harbourline.logrotate.j2
+    dest: /etc/logrotate.d/harbourline

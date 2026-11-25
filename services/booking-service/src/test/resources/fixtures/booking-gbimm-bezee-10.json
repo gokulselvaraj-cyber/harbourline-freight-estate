@@ -1,0 +1,30 @@
+{
+  "shipperAccount": "HFA10090",
+  "origin": "GBIMM",
+  "destination": "BEZEE",
+  "mode": "ROAD",
+  "equipment": "TRL136",
+  "units": 1,
+  "readyDate": "2026-04-24",
+  "receiver": {
+    "name": "TEST-CONSIGNEE-0010",
+    "company": null,
+    "phone": "+44 7700 900110",
+    "email": "consignee0010@example.com",
+    "address": "10 Test Street",
+    "city": "Testville",
+    "postcode": "ZZ99 9ZZ",
+    "country": "BE",
+    "eori": null
+  },
+  "items": [
+    {
+      "description": "Garden furniture",
+      "hsCode": "940379",
+      "packages": 35,
+      "grossKg": 880.0,
+      "volumeM3": 11.5,
+      "dangerous": false
+    }
+  ]
+}

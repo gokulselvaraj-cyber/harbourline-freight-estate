@@ -1,0 +1,6 @@
+---
+postgres_version: 15
+postgres_max_connections: 100
+postgres_shared_buffers: 256MB
+postgres_wal_level: replica
+postgres_allowed_cidrs: []

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.harbourline.example/booking-confirmed.v1.json",
+  "title": "booking-confirmed",
+  "type": "object",
+  "required": [
+    "bookingRef",
+    "origin",
+    "destination",
+    "mode",
+    "total"
+  ],
+  "properties": {
+    "bookingRef": {
+      "type": "string"
+    },
+    "origin": {
+      "type": "string"
+    },
+    "destination": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string"
+    },
+    "total": {
+      "type": "number"
+    }
+  }
+}

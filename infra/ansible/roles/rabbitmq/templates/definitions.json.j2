@@ -1,0 +1,21 @@
+{
+  "vhosts": [{"name": "{{ rabbitmq_vhost }}"}],
+  "users": [{"name": "{{ rabbit_user }}", "password": "{{ rabbit_password }}", "tags": ""}],
+  "exchanges": [
+{% for e in rabbitmq_exchanges %}
+    {"name": "{{ e.name }}", "vhost": "{{ rabbitmq_vhost }}", "type": "{{ e.type }}", "durable": true}{{ "," if not loop.last }}
+{% endfor %}
+  ],
+  "queues": [
+{% for q in rabbitmq_queues %}
+    {"name": "{{ q.name }}", "vhost": "{{ rabbitmq_vhost }}", "durable": true,
+     "arguments": {"x-dead-letter-exchange": "hf.dlx"}}{{ "," if not loop.last }}
+{% endfor %}
+  ],
+  "bindings": [
+{% for q in rabbitmq_queues %}
+    {"source": "{{ q.exchange }}", "vhost": "{{ rabbitmq_vhost }}", "destination": "{{ q.name }}",
+     "destination_type": "queue", "routing_key": "{{ q.key }}"}{{ "," if not loop.last }}
+{% endfor %}
+  ]
+}

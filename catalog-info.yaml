@@ -1,0 +1,89 @@
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: harbourline-freight-platform
+  description: Booking, rating, customs and tracking for sea and road freight
+spec:
+  owner: group:team-platform
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: booking-service
+  description: Bookings, rating against the lane tariff, dispatch slots
+  annotations:
+    github.com/project-slug: harbourline/harbourline-freight-estate
+spec:
+  type: service
+  lifecycle: production
+  owner: group:team-booking
+  system: harbourline-freight-platform
+  providesApis: [booking-api]
+  consumesApis: [customs-docs-api]
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: tracking-worker
+  description: Carrier events, ETA, receiver notifications
+spec:
+  type: worker
+  lifecycle: production
+  owner: group:team-visibility
+  system: harbourline-freight-platform
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: customs-docs
+  description: GB/EU customs declarations and trade documents
+spec:
+  type: service
+  lifecycle: production
+  owner: group:team-trade-docs
+  system: harbourline-freight-platform
+  providesApis: [customs-docs-api]
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: harbourline-ansible
+  description: Ansible automation for app, db, mq, edge and depot servers
+spec:
+  type: infrastructure
+  lifecycle: production
+  owner: group:team-platform
+  system: harbourline-freight-platform
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: booking-api
+spec:
+  type: openapi
+  lifecycle: production
+  owner: group:team-booking
+  definition:
+    $text: ./contracts/booking.openapi.yaml
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: customs-docs-api
+spec:
+  type: openapi
+  lifecycle: production
+  owner: group:team-trade-docs
+  definition:
+    $text: ./contracts/customs-docs.openapi.yaml
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: tracking-events
+spec:
+  type: asyncapi
+  lifecycle: production
+  owner: group:team-visibility
+  definition:
+    $text: ./contracts/tracking-events.asyncapi.yaml

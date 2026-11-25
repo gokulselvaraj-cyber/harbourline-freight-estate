@@ -1,0 +1,4 @@
+---
+nginx_worker_connections: 2048
+edge_public_name: portal.harbourline.example
+open_ports: [80, 443]

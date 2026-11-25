@@ -1,0 +1,16 @@
+{
+  "brokerApi": {
+    "baseUrl": "https://sandbox.clearpath-broker.example",
+    "timeoutMs": 8000
+  },
+  "hsClassifier": {
+    "endpoint": "http://localhost:8787/v1/classify",
+    "model": "hf-hs-small",
+    "minConfidence": 0.8
+  },
+  "rabbit": {
+    "url": "amqp://localhost:5672/%2Fhf",
+    "queue": "customs.booking-confirmed"
+  },
+  "declarantEori": "GB000000000000"
+}

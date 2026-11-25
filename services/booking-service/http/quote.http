@@ -1,0 +1,4 @@
+POST http://localhost:8080/v1/quotes
+Content-Type: application/json
+
+{"origin":"GBIMM","destination":"DEHAM","mode":"SEA","equipment":"20GP","units":1}

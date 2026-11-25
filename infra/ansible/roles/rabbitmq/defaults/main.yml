@@ -1,0 +1,4 @@
+---
+rabbitmq_vhost: /hf
+rabbitmq_exchanges: []
+rabbitmq_queues: []

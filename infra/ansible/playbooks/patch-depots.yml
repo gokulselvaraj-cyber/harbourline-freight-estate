@@ -1,0 +1,18 @@
+---
+- name: Monthly OS patching of depot servers (outside dispatch hours)
+  hosts: depot_servers
+  become: true
+  serial: 1
+  tasks:
+    - name: Refuse to patch during the dispatch window
+      ansible.builtin.assert:
+        that: ansible_date_time.hour | int >= 20 or ansible_date_time.hour | int < 5
+        fail_msg: "Depot {{ depot_name }} is inside the dispatch window"
+    - name: Upgrade packages
+      ansible.builtin.apt:
+        upgrade: safe
+        update_cache: true
+    - name: Reboot if required
+      ansible.builtin.reboot:
+        reboot_timeout: 600
+      when: ansible_facts.packages is defined

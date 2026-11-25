@@ -1,0 +1,22 @@
+{
+  "bookingRef": "HLF-26-FXDE01",
+  "exporterEori": "GB000000000000",
+  "origin": "GBFXT",
+  "destination": "DEHAM",
+  "shipTo": {
+    "name": "TEST-CONSIGNEE-DE01",
+    "address": "1 Test Street",
+    "city": "Testville",
+    "postcode": "ZZ99 9ZZ",
+    "country": "DE"
+  },
+  "items": [
+    {
+      "description": "Bicycle parts",
+      "hsCode": "871499",
+      "packages": 10,
+      "grossKg": 410,
+      "volumeM3": 3.2
+    }
+  ]
+}

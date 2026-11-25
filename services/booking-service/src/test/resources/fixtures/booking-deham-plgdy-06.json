@@ -1,0 +1,30 @@
+{
+  "shipperAccount": "HFA10062",
+  "origin": "DEHAM",
+  "destination": "PLGDY",
+  "mode": "ROAD",
+  "equipment": "GRP",
+  "units": 2,
+  "readyDate": "2026-09-04",
+  "receiver": {
+    "name": "TEST-CONSIGNEE-0006",
+    "company": null,
+    "phone": "+44 7700 900106",
+    "email": "consignee0006@example.com",
+    "address": "6 Test Street",
+    "city": "Testville",
+    "postcode": "ZZ99 9ZZ",
+    "country": "PL",
+    "eori": null
+  },
+  "items": [
+    {
+      "description": "Frozen fish fillets",
+      "hsCode": "030489",
+      "packages": 18,
+      "grossKg": 15800.0,
+      "volumeM3": 52.0,
+      "dangerous": false
+    }
+  ]
+}

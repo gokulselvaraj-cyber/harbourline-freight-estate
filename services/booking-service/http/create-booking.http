@@ -1,0 +1,4 @@
+POST http://localhost:8080/v1/bookings
+Content-Type: application/json
+
+< ../../../contracts/examples/create-booking.request.json

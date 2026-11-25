@@ -1,0 +1,8 @@
+^XA
+^CF0,60
+^FO50,50^FDHarbourline^FS
+^BY3
+^FO50,140^BCN,120,Y,N,N^FD{ref}^FS
+^CF0,40
+^FO50,320^FD{status}^FS
+^XZ

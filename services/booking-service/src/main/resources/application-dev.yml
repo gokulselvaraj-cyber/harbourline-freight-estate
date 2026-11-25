@@ -1,0 +1,8 @@
+harbourline:
+  rating:
+    fuel-surcharge-pct: 10.0
+  customs-docs:
+    base-url: http://localhost:3000
+logging:
+  level:
+    com.harbourline: DEBUG

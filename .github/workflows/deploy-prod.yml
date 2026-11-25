@@ -1,0 +1,16 @@
+name: deploy-prod
+on:
+  workflow_dispatch:
+    inputs:
+      service: {type: choice, options: [booking, customs-docs, tracking], required: true}
+      version: {type: string, required: true}
+jobs:
+  deploy:
+    runs-on: [self-hosted, hf-ops]
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+      - run: >
+          ansible-playbook -i inventories/prod/hosts.ini playbooks/deploy-${{ inputs.service }}.yml
+          -e version=${{ inputs.version }} --vault-id prod@/etc/hf/vault.id
+        working-directory: infra/ansible

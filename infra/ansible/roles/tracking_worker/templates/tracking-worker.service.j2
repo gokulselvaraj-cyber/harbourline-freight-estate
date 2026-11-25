@@ -1,0 +1,14 @@
+[Unit]
+Description=Harbourline tracking-worker
+After=network-online.target
+
+[Service]
+User={{ app_user }}
+EnvironmentFile=/etc/harbourline/tracking-worker.env
+WorkingDirectory={{ app_root }}/tracking-worker
+ExecStart={{ tracking_worker_exec }}
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

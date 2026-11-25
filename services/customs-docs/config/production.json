@@ -1,0 +1,14 @@
+{
+  "brokerApi": {
+    "baseUrl": "https://api.clearpath-broker.example",
+    "timeoutMs": 10000
+  },
+  "hsClassifier": {
+    "endpoint": "https://ai-gw.us-east-1.hf-ai.example/v1/classify",
+    "model": "hf-hs-large",
+    "minConfidence": 0.85
+  },
+  "rabbit": {
+    "url": "amqp://hf-mq-01.hf.internal:5672/%2Fhf"
+  }
+}

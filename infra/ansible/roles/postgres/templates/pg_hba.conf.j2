@@ -1,0 +1,4 @@
+local   all  postgres                peer
+{% for cidr in postgres_allowed_cidrs %}
+hostssl all  all       {{ cidr }}    scram-sha-256
+{% endfor %}

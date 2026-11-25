@@ -1,0 +1,17 @@
+{
+  "origin": "GBTEE",
+  "destination": "PLGDY",
+  "mode": "SEA",
+  "equipment": "LCL",
+  "units": 1,
+  "onDate": "2026-10-01",
+  "items": [
+    {
+      "description": "Mixed pallets",
+      "packages": 7,
+      "grossKg": 4200,
+      "volumeM3": 10.5,
+      "dangerous": false
+    }
+  ]
+}

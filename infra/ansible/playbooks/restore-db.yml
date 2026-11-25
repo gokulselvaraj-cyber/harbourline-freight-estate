@@ -1,0 +1,16 @@
+---
+- name: Restore a database from the latest dump
+  hosts: db_servers
+  become: true
+  vars_prompt:
+    - name: restore_db
+      prompt: "Database to restore (booking|tracking)"
+      private: false
+  tasks:
+    - name: Fetch latest dump
+      ansible.builtin.command: >
+        aws s3 cp {{ pg_backup_bucket }}/{{ restore_db }}/latest.dump /var/tmp/restore.dump
+        --region {{ pg_backup_region }}
+    - name: Restore
+      become_user: postgres
+      ansible.builtin.command: pg_restore --clean -d {{ restore_db }} /var/tmp/restore.dump

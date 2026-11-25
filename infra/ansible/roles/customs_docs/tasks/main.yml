@@ -1,0 +1,35 @@
+---
+- name: App user
+  ansible.builtin.user:
+    name: "{{ app_user }}"
+    system: true
+- name: Release directory
+  ansible.builtin.file:
+    path: "{{ app_root }}/customs-docs"
+    state: directory
+    owner: "{{ app_user }}"
+- name: Install node
+  ansible.builtin.apt:
+    name: "nodejs={{ node_major }}.*"
+- name: Unpack release
+  ansible.builtin.unarchive:
+    src: "https://artifacts.hf.internal/customs-docs/{{ customs_docs_version }}/customs-docs.tgz"
+    dest: "{{ app_root }}/customs-docs"
+    remote_src: true
+- name: Environment file
+  ansible.builtin.template:
+    src: customs-docs.env.j2
+    dest: "/etc/harbourline/customs-docs.env"
+    mode: "0640"
+  notify: restart customs-docs
+- name: systemd unit
+  ansible.builtin.template:
+    src: customs-docs.service.j2
+    dest: "/etc/systemd/system/customs-docs.service"
+  notify: restart customs-docs
+- name: Enable and start
+  ansible.builtin.systemd:
+    name: customs-docs
+    enabled: true
+    state: started
+    daemon_reload: true

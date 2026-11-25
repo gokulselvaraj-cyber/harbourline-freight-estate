@@ -1,0 +1,31 @@
+---
+- name: App user
+  ansible.builtin.user:
+    name: "{{ app_user }}"
+    system: true
+- name: Release directory
+  ansible.builtin.file:
+    path: "{{ app_root }}/booking-service"
+    state: directory
+    owner: "{{ app_user }}"
+- name: Fetch jar
+  ansible.builtin.get_url:
+    url: "https://artifacts.hf.internal/booking-service/{{ booking_service_version }}/booking-service.jar"
+    dest: "{{ app_root }}/booking-service/booking-service.jar"
+- name: Environment file
+  ansible.builtin.template:
+    src: booking-service.env.j2
+    dest: "/etc/harbourline/booking-service.env"
+    mode: "0640"
+  notify: restart booking-service
+- name: systemd unit
+  ansible.builtin.template:
+    src: booking-service.service.j2
+    dest: "/etc/systemd/system/booking-service.service"
+  notify: restart booking-service
+- name: Enable and start
+  ansible.builtin.systemd:
+    name: booking-service
+    enabled: true
+    state: started
+    daemon_reload: true

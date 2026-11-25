@@ -1,0 +1,16 @@
+name: customs-docs
+on:
+  pull_request:
+    paths: ["services/customs-docs/**"]
+  push:
+    branches: [main]
+    paths: ["services/customs-docs/**"]
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: "20"}
+      - run: npm install && npm run build && npm test
+        working-directory: services/customs-docs

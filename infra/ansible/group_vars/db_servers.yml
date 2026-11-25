@@ -1,0 +1,8 @@
+---
+postgres_max_connections: 200
+postgres_shared_buffers: 2GB
+postgres_wal_level: replica
+postgres_allowed_cidrs:
+  - 10.40.10.0/24   # app subnet
+  - 10.40.20.0/24   # ops subnet
+open_ports: ["{{ postgres_port }}"]

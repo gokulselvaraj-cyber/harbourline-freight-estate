@@ -1,0 +1,9 @@
+---
+depot_code: ZEE
+depot_name: Zeebrugge
+depot_country: BE
+depot_locode: BEZEE
+timezone: Europe/Brussels
+loading_docks: 5
+dispatch_cutoff: "15:30"
+label_printer: zpl-zee-01.hf.internal

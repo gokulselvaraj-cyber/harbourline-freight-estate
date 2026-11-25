@@ -1,0 +1,4 @@
+listeners.tcp.default = {{ rabbitmq_port }}
+management.tcp.port = {{ rabbitmq_mgmt_port }}
+management.load_definitions = /etc/rabbitmq/definitions.json
+vm_memory_high_watermark.relative = 0.6

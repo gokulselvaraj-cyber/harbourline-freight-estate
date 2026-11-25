@@ -1,0 +1,22 @@
+---
+- name: Set timezone
+  community.general.timezone:
+    name: "{{ timezone }}"
+- name: Base packages
+  ansible.builtin.apt:
+    name: [chrony, curl, jq, unzip, logrotate, rsyslog]
+    state: present
+- name: Chrony config
+  ansible.builtin.template:
+    src: chrony.conf.j2
+    dest: /etc/chrony/chrony.conf
+  notify: restart chrony
+- name: MOTD
+  ansible.builtin.copy:
+    src: ../../files/motd
+    dest: /etc/motd
+- name: Admin sudoers
+  ansible.builtin.copy:
+    dest: /etc/sudoers.d/hfops
+    content: "%{{ admin_group }} ALL=(ALL) NOPASSWD: ALL\n"
+    validate: visudo -cf %s

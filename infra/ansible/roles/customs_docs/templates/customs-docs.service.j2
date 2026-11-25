@@ -1,0 +1,14 @@
+[Unit]
+Description=Harbourline customs-docs
+After=network-online.target
+
+[Service]
+User={{ app_user }}
+EnvironmentFile=/etc/harbourline/customs-docs.env
+WorkingDirectory={{ app_root }}/customs-docs
+ExecStart={{ customs_docs_exec }}
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

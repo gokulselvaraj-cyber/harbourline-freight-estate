@@ -1,0 +1,38 @@
+# managed by ansible - public edge for portal.harbourline.example
+upstream booking_service {
+{% for h in groups['app_servers'] %}
+    server {{ h }}:{{ booking_service_port }} max_fails=3 fail_timeout=10s;
+{% endfor %}
+}
+
+upstream customs_docs {
+{% for h in groups['app_servers'] %}
+    server {{ h }}:{{ booking_service_port }} max_fails=3 fail_timeout=10s;
+{% endfor %}
+}
+
+server {
+    listen 443 ssl http2;
+    server_name {{ edge_public_name }};
+    ssl_certificate     /etc/ssl/hf/{{ tls_cert_name | default('selfsigned') }}.crt;
+    ssl_certificate_key /etc/ssl/hf/{{ tls_cert_name | default('selfsigned') }}.key;
+
+    location /api/bookings/ {
+        proxy_pass http://booking_service/v1/bookings/;
+        proxy_read_timeout 15s;
+    }
+    location /api/quotes/ {
+        proxy_pass http://booking_service/v1/quotes/;
+    }
+    location /customs/ {
+        proxy_pass http://customs_docs/v1/;
+        proxy_read_timeout 30s;
+        client_max_body_size 8m;
+    }
+}
+
+server {
+    listen 80;
+    server_name {{ edge_public_name }};
+    return 301 https://$host$request_uri;
+}

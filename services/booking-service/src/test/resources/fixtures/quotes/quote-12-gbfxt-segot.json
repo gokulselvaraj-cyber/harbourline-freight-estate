@@ -1,0 +1,17 @@
+{
+  "origin": "GBFXT",
+  "destination": "SEGOT",
+  "mode": "SEA",
+  "equipment": "40HC",
+  "units": 2,
+  "onDate": "2026-10-01",
+  "items": [
+    {
+      "description": "Mixed pallets",
+      "packages": 16,
+      "grossKg": 350,
+      "volumeM3": 0.88,
+      "dangerous": false
+    }
+  ]
+}

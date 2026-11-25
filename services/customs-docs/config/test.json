@@ -1,0 +1,11 @@
+{
+  "brokerApi": {
+    "baseUrl": "https://sandbox.clearpath-broker.example"
+  },
+  "hsClassifier": {
+    "endpoint": "https://ai-gw.eu-west-2.hf-ai.example/v1/classify"
+  },
+  "rabbit": {
+    "url": "amqp://hf-mq-01.test.hf.internal:5672/%2Fhf"
+  }
+}

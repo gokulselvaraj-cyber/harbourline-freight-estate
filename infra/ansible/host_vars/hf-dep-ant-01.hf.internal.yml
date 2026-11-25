@@ -1,0 +1,9 @@
+---
+depot_code: ANT
+depot_name: Antwerp
+depot_country: BE
+depot_locode: BEANR
+timezone: Europe/Brussels
+loading_docks: 11
+dispatch_cutoff: "15:30"
+label_printer: zpl-ant-01.hf.internal

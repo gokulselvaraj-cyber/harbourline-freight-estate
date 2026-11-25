@@ -1,0 +1,10 @@
+#!/bin/bash
+# managed by ansible - dumps booking + tracking (full data, incl. delivery_party)
+set -euo pipefail
+STAMP=$(date +%Y%m%dT%H%M)
+for DB in {{ booking_db_name }} {{ tracking_db_name }}; do
+  sudo -u postgres pg_dump -Fc "$DB" > /var/tmp/$DB.dump
+  aws s3 cp /var/tmp/$DB.dump {{ pg_backup_bucket }}/$DB/$STAMP.dump --region {{ pg_backup_region }}
+  aws s3 cp /var/tmp/$DB.dump {{ pg_backup_bucket }}/$DB/latest.dump --region {{ pg_backup_region }}
+  rm -f /var/tmp/$DB.dump
+done

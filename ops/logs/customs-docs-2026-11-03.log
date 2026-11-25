@@ -1,0 +1,5 @@
+{"level":30,"time":"2026-11-03T08:01:12Z","msg":"customs-docs listening on 3100"}
+{"level":30,"time":"2026-11-03T08:04:40Z","bookingRef":"HLF-26-T0101","msg":"customs draft expected"}
+{"level":50,"time":"2026-11-03T08:05:02Z","err":"HS code for 'spare parts' needs manual review (0.41)","msg":"request failed"}
+{"level":30,"time":"2026-11-03T08:09:51Z","bookingRef":"HLF-26-T0104","msg":"customs draft expected"}
+{"level":50,"time":"2026-11-03T09:30:17Z","err":"timeout of 10000ms exceeded","msg":"request failed"}

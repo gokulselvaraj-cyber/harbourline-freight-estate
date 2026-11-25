@@ -1,0 +1,16 @@
+sequenceDiagram
+  participant Portal
+  participant Booking as booking-service
+  participant Customs as customs-docs
+  participant Broker as ClearPath Broker
+  participant MQ as RabbitMQ
+  participant Tracking as tracking-worker
+  Portal->>Booking: POST /v1/bookings
+  Booking->>Booking: RatingService.quote (lane_tariff)
+  Booking->>Customs: POST /v1/declarations (GB<->EU only)
+  Customs->>Broker: POST /v3/declarations
+  Booking->>MQ: booking.confirmed.v1
+  Booking->>Booking: DispatchService.schedule
+  Booking->>MQ: booking.dispatched.v1
+  MQ->>Tracking: tracking.booking-dispatched
+  Tracking->>MQ: tracking.eta-updated.v1

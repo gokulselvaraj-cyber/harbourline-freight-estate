@@ -1,0 +1,33 @@
+---
+- name: App user
+  ansible.builtin.user:
+    name: "{{ app_user }}"
+    system: true
+- name: Release directory
+  ansible.builtin.file:
+    path: "{{ app_root }}/tracking-worker"
+    state: directory
+    owner: "{{ app_user }}"
+- name: Virtualenv + package
+  ansible.builtin.pip:
+    name: "harbourline-tracking-worker=={{ tracking_worker_version }}"
+    virtualenv: "{{ app_root }}/tracking-worker/venv"
+    virtualenv_command: "python{{ python_version }} -m venv"
+    extra_args: "--index-url https://pypi.hf.internal/simple"
+- name: Environment file
+  ansible.builtin.template:
+    src: tracking-worker.env.j2
+    dest: "/etc/harbourline/tracking-worker.env"
+    mode: "0640"
+  notify: restart tracking-worker
+- name: systemd unit
+  ansible.builtin.template:
+    src: tracking-worker.service.j2
+    dest: "/etc/systemd/system/tracking-worker.service"
+  notify: restart tracking-worker
+- name: Enable and start
+  ansible.builtin.systemd:
+    name: tracking-worker
+    enabled: true
+    state: started
+    daemon_reload: true

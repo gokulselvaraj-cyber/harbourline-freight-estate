@@ -1,0 +1,11 @@
+---
+rabbitmq_erlang_cookie: "{{ vault_rabbit_cookie }}"
+rabbitmq_exchanges:
+  - {name: hf.bookings, type: topic}
+  - {name: hf.tracking, type: topic}
+  - {name: hf.carrier, type: topic}
+rabbitmq_queues:
+  - {name: tracking.booking-dispatched, exchange: hf.bookings, key: booking.dispatched.v1}
+  - {name: tracking.carrier-events, exchange: hf.carrier, key: carrier.event.v1}
+  - {name: customs.booking-confirmed, exchange: hf.bookings, key: booking.confirmed.v1}
+open_ports: ["{{ rabbitmq_port }}", "{{ rabbitmq_mgmt_port }}"]

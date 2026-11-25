@@ -1,0 +1,12 @@
+---
+java_package: openjdk-17-jre-headless
+node_major: 20
+python_version: "3.11"
+app_user: hfapp
+app_root: /opt/harbourline
+booking_heap: "-Xms512m -Xmx1536m"
+tracking_concurrency: 4
+open_ports:
+  - "{{ booking_service_port }}"
+  - "{{ customs_docs_port }}"
+  - "{{ tracking_metrics_port }}"

@@ -1,0 +1,30 @@
+{
+  "shipperAccount": "HFA10055",
+  "origin": "BEANR",
+  "destination": "GBIMM",
+  "mode": "ROAD",
+  "equipment": "GRP",
+  "units": 1,
+  "readyDate": "2026-08-26",
+  "receiver": {
+    "name": "TEST-CONSIGNEE-0005",
+    "company": "Example Receiver 5 BV",
+    "phone": "+44 7700 900105",
+    "email": "consignee0005@example.com",
+    "address": "5 Test Street",
+    "city": "Testville",
+    "postcode": "ZZ99 9ZZ",
+    "country": "GB",
+    "eori": null
+  },
+  "items": [
+    {
+      "description": "Printed books",
+      "hsCode": "490199",
+      "packages": 14,
+      "grossKg": 1350.0,
+      "volumeM3": 2.2,
+      "dangerous": false
+    }
+  ]
+}

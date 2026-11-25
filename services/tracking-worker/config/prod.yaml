@@ -1,0 +1,15 @@
+env: prod
+db:
+  host: hf-db-01.hf.internal
+  name: tracking
+  user: tracking_app
+  password: ${TRACKING_DB_PASSWORD}
+rabbit:
+  host: hf-mq-01.hf.internal
+  vhost: /hf
+  prefetch: 40
+eta:
+  sea_port_dwell_hours: 12
+  road_border_buffer_hours: 4
+  notify_threshold_hours: 2
+concurrency: 4

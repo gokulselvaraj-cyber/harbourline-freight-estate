@@ -1,0 +1,28 @@
+---
+hf_env: dev
+hf_domain: dev.hf.internal
+ntp_servers: [ntp1.hf.internal, ntp2.hf.internal]
+timezone: Europe/London
+admin_group: hfops
+
+booking_service_port: 8080
+booking_service_version: "4.6.2"
+customs_docs_port: 3000
+customs_docs_version: "2.3.0"
+tracking_worker_version: "1.9.1"
+tracking_metrics_port: 9102
+
+postgres_version: 15
+postgres_port: 5432
+rabbitmq_port: 5672
+rabbitmq_mgmt_port: 15672
+rabbitmq_vhost: /hf
+
+booking_db_name: booking
+tracking_db_name: tracking
+db_user_booking: booking_app
+db_password_booking: "{{ vault_db_password_booking }}"
+db_user_tracking: tracking_app
+db_password_tracking: "{{ vault_db_password_tracking }}"
+rabbit_user: hf_app
+rabbit_password: "{{ vault_rabbit_password }}"

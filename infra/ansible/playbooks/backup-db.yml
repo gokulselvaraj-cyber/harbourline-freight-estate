@@ -1,0 +1,10 @@
+---
+- name: Nightly Postgres backup to object storage
+  hosts: db_servers
+  become: true
+  roles:
+    - pg_backup
+  tasks:
+    - name: Run the dump now (cron runs it nightly at 01:30)
+      ansible.builtin.command: /usr/local/bin/hf-pg-backup.sh
+      when: run_now | default(false) | bool

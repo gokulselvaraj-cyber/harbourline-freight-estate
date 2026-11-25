@@ -1,0 +1,22 @@
+{
+  "bookingRef": "HLF-26-FXNO01",
+  "exporterEori": "GB000000000000",
+  "origin": "GBFXT",
+  "destination": "NOOSL",
+  "shipTo": {
+    "name": "TEST-CONSIGNEE-NO01",
+    "address": "1 Test Street",
+    "city": "Testville",
+    "postcode": "ZZ99 9ZZ",
+    "country": "NO"
+  },
+  "items": [
+    {
+      "description": "Frozen fish fillets",
+      "hsCode": "030489",
+      "packages": 10,
+      "grossKg": 15800,
+      "volumeM3": 52
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+asyncapi: 2.6.0
+info:
+  title: Harbourline booking and tracking events
+  version: 1.3.0
+servers:
+  prod:
+    url: hf-mq-01.hf.internal:5672
+    protocol: amqp
+    description: RabbitMQ, vhost /hf
+channels:
+  booking.confirmed.v1:
+    description: Exchange hf.bookings. Booking priced and confirmed.
+    bindings: {amqp: {is: routingKey, exchange: {name: hf.bookings, type: topic}}}
+    publish:
+      operationId: bookingConfirmed
+      message: {payload: {$ref: '#/components/schemas/BookingConfirmed'}}
+  booking.dispatched.v1:
+    description: Exchange hf.bookings. Dock slot booked; consumed by tracking-worker (queue tracking.booking-dispatched).
+    bindings: {amqp: {is: routingKey, exchange: {name: hf.bookings, type: topic}}}
+    publish:
+      operationId: bookingDispatched
+      message: {payload: {$ref: '#/components/schemas/BookingDispatched'}}
+  carrier.event.v1:
+    description: Exchange hf.carrier. Normalised carrier status event.
+    subscribe:
+      operationId: carrierEvent
+      message: {payload: {$ref: '#/components/schemas/CarrierEvent'}}
+  tracking.eta-updated.v1:
+    description: Exchange hf.tracking. New ETA for a booking.
+    publish:
+      operationId: etaUpdated
+      message: {payload: {$ref: '#/components/schemas/EtaUpdated'}}
+components:
+  schemas:
+    BookingConfirmed:
+      type: object
+      properties:
+        bookingRef: {type: string}
+        origin: {type: string}
+        destination: {type: string}
+        mode: {type: string}
+        total: {type: number}
+        customsRequired: {type: boolean}
+        at: {type: string, format: date-time}
+    BookingDispatched:
+      type: object
+      properties:
+        bookingRef: {type: string}
+        depotCode: {type: string}
+        slotDate: {type: string, format: date}
+        dockNo: {type: integer}
+        destination: {type: string}
+        receiverName: {type: string, description: personal data}
+        receiverPhone: {type: string, description: personal data}
+        transitDays: {type: integer}
+        at: {type: string, format: date-time}
+    CarrierEvent:
+      type: object
+      properties:
+        booking_ref: {type: string}
+        carrier: {type: string}
+        code: {type: string, enum: [DEP, ARR, DLY, POD, BRD, EXC]}
+        at: {type: string, format: date-time}
+        delay_hours: {type: integer}
+        location: {type: string}
+    EtaUpdated:
+      type: object
+      properties:
+        bookingRef: {type: string}
+        eta: {type: string, format: date-time}
+        source: {type: string}

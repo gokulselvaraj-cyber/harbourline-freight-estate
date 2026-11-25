@@ -1,0 +1,16 @@
+---
+- name: Install awscli
+  ansible.builtin.apt:
+    name: awscli
+- name: Backup script
+  ansible.builtin.template:
+    src: hf-pg-backup.sh.j2
+    dest: /usr/local/bin/hf-pg-backup.sh
+    mode: "0750"
+- name: Nightly cron
+  ansible.builtin.cron:
+    name: hf pg backup
+    hour: "1"
+    minute: "30"
+    job: /usr/local/bin/hf-pg-backup.sh >> /var/log/hf-pg-backup.log 2>&1
+  when: pg_backup_bucket | length > 0

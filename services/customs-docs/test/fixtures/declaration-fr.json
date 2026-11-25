@@ -1,0 +1,22 @@
+{
+  "bookingRef": "HLF-26-FXFR01",
+  "exporterEori": "GB000000000000",
+  "origin": "GBFXT",
+  "destination": "FRLEH",
+  "shipTo": {
+    "name": "TEST-CONSIGNEE-FR01",
+    "address": "1 Test Street",
+    "city": "Testville",
+    "postcode": "ZZ99 9ZZ",
+    "country": "FR"
+  },
+  "items": [
+    {
+      "description": "Printed books",
+      "hsCode": "490199",
+      "packages": 10,
+      "grossKg": 1350,
+      "volumeM3": 2.2
+    }
+  ]
+}

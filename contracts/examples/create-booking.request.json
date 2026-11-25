@@ -1,0 +1,25 @@
+{
+  "shipperAccount": "HFA10027",
+  "origin": "GBFXT",
+  "destination": "NLRTM",
+  "mode": "SEA",
+  "equipment": "40HC",
+  "units": 1,
+  "readyDate": "2026-11-03",
+  "receiver": {
+    "name": "TEST-CONSIGNEE-0001",
+    "address": "1 Test Street",
+    "city": "Testville",
+    "postcode": "ZZ99 9ZZ",
+    "country": "NL"
+  },
+  "items": [
+    {
+      "description": "Ceramic floor tiles",
+      "hsCode": "690721",
+      "packages": 24,
+      "grossKg": 980,
+      "volumeM3": 1.6
+    }
+  ]
+}

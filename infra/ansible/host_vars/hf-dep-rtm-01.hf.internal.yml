@@ -1,0 +1,9 @@
+---
+depot_code: RTM
+depot_name: Rotterdam
+depot_country: NL
+depot_locode: NLRTM
+timezone: Europe/Amsterdam
+loading_docks: 18
+dispatch_cutoff: "15:30"
+label_printer: zpl-rtm-01.hf.internal

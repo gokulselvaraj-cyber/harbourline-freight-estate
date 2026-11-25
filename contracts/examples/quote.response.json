@@ -1,0 +1,11 @@
+{
+  "origin": "GBFXT",
+  "destination": "NLRTM",
+  "equipment": "40HC",
+  "weightBand": 1,
+  "base": 1076.4,
+  "fuelSurcharge": 150.7,
+  "customsFee": 45.0,
+  "total": 1272.1,
+  "transitDays": 2
+}

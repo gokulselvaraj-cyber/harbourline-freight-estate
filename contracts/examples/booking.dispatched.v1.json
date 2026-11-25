@@ -1,0 +1,11 @@
+{
+  "bookingRef": "HLF-26-7Q4K2M",
+  "depotCode": "FXT",
+  "slotDate": "2026-11-03",
+  "dockNo": 4,
+  "destination": "NLRTM",
+  "receiverName": "TEST-CONSIGNEE-0001",
+  "receiverPhone": "+44 7700 900101",
+  "transitDays": 2,
+  "at": "2026-11-02T10:14:00Z"
+}

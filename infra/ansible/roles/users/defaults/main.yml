@@ -1,0 +1,4 @@
+---
+ops_users:
+  - {name: drautela, pubkey_url: "https://keys.hf.internal/drautela.pub"}
+  - {name: oncall, pubkey_url: "https://keys.hf.internal/oncall.pub"}

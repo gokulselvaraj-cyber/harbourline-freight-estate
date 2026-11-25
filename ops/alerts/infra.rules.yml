@@ -1,0 +1,10 @@
+groups:
+  - name: infra
+    rules:
+      - alert: BackupTooOld
+        expr: time() - hf_pg_backup_last_success_timestamp > 129600
+        labels: {severity: page, team: platform}
+      - alert: DepotScannerDown
+        expr: up{job="depot-scanner"} == 0
+        for: 5m
+        labels: {severity: page, team: platform}

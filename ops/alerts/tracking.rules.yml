@@ -1,0 +1,10 @@
+groups:
+  - name: tracking-worker
+    rules:
+      - alert: CarrierQueueBacklog
+        expr: rabbitmq_queue_messages_ready{queue="tracking.carrier-events"} > 5000
+        for: 15m
+        labels: {severity: page, team: visibility}
+      - alert: SmsFailures
+        expr: increase(hf_tracking_sms_total{result="error"}[1h]) > 100
+        labels: {severity: ticket, team: visibility}

@@ -1,0 +1,14 @@
+@startuml
+node "hf-edge-01" { [nginx] }
+node "hf-app-01/02" { [booking-service :8080]
+  [customs-docs :3100]
+  [tracking-worker :9102] }
+database "hf-db-01" { [booking]
+  [tracking] }
+queue "hf-mq-01 RabbitMQ" as mq
+[nginx] --> [booking-service :8080]
+[nginx] --> [customs-docs :3100]
+[booking-service :8080] --> [customs-docs :3100]
+[booking-service :8080] --> mq
+mq --> [tracking-worker :9102]
+@enduml

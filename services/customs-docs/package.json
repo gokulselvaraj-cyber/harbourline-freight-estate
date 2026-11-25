@@ -1,0 +1,31 @@
+{
+  "name": "@harbourline/customs-docs",
+  "version": "2.3.0",
+  "private": true,
+  "description": "Customs declarations (export/import, T1 transit) for GB<->EU bookings",
+  "main": "dist/server.js",
+  "scripts": {
+    "build": "tsc -p .",
+    "start": "node dist/server.js",
+    "test": "vitest run",
+    "gen:client": "openapi-generator-cli generate -i ../../contracts/booking.openapi.yaml -g typescript-axios -o src/generated/booking-api-client"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "express": "4.19.2",
+    "amqplib": "0.10.4",
+    "axios": "1.6.8",
+    "handlebars": "4.7.8",
+    "pino": "8.20.0",
+    "zod": "3.23.4",
+    "tariff-codes-lite": "file:vendor/tariff-codes-lite"
+  },
+  "devDependencies": {
+    "typescript": "5.4.5",
+    "vitest": "1.5.2",
+    "@types/express": "4.17.21",
+    "@openapitools/openapi-generator-cli": "2.13.4"
+  }
+}

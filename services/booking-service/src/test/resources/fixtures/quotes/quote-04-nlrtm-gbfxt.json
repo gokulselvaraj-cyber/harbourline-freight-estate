@@ -1,0 +1,17 @@
+{
+  "origin": "NLRTM",
+  "destination": "GBFXT",
+  "mode": "ROAD",
+  "equipment": "TRL136",
+  "units": 1,
+  "onDate": "2026-10-01",
+  "items": [
+    {
+      "description": "Mixed pallets",
+      "packages": 8,
+      "grossKg": 350,
+      "volumeM3": 0.88,
+      "dangerous": false
+    }
+  ]
+}

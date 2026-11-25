@@ -1,0 +1,40 @@
+{"ts":"2026-11-02T06:00:00Z","lvl":"INFO","log":"c.h.b.s.DispatchService","msg":"slot booked depot=FXT dock=1 ref=HLF-26-T0000"}
+{"ts":"2026-11-02T06:07:13Z","lvl":"INFO","log":"c.h.b.s.DispatchService","msg":"slot booked depot=RTM dock=2 ref=HLF-26-T0001"}
+{"ts":"2026-11-02T06:14:26Z","lvl":"INFO","log":"c.h.b.s.DispatchService","msg":"slot booked depot=IMM dock=3 ref=HLF-26-T0002"}
+{"ts":"2026-11-02T06:21:39Z","lvl":"INFO","log":"c.h.b.s.DispatchService","msg":"slot booked depot=HAM dock=4 ref=HLF-26-T0003"}
+{"ts":"2026-11-02T06:28:52Z","lvl":"INFO","log":"c.h.b.s.DispatchService","msg":"slot booked depot=GDY dock=5 ref=HLF-26-T0004"}
+{"ts":"2026-11-02T06:35:05Z","lvl":"INFO","log":"c.h.b.s.DispatchService","msg":"slot booked depot=FXT dock=6 ref=HLF-26-T0005"}
+{"ts":"2026-11-02T07:42:18Z","lvl":"INFO","log":"c.h.b.s.DispatchService","msg":"slot booked depot=RTM dock=7 ref=HLF-26-T0006"}
+{"ts":"2026-11-02T07:49:31Z","lvl":"WARN","log":"c.h.b.s.DispatchService","msg":"customs-docs attempt 1 failed for HLF-26-T0007: Read timed out"}
+{"ts":"2026-11-02T07:56:44Z","lvl":"INFO","log":"c.h.b.s.DispatchService","msg":"slot booked depot=HAM dock=1 ref=HLF-26-T0008"}
+{"ts":"2026-11-02T07:03:57Z","lvl":"INFO","log":"c.h.b.s.DispatchService","msg":"slot booked depot=GDY dock=2 ref=HLF-26-T0009"}
+{"ts":"2026-11-02T07:10:10Z","lvl":"INFO","log":"c.h.b.s.DispatchService","msg":"slot booked depot=FXT dock=3 ref=HLF-26-T0010"}
+{"ts":"2026-11-02T07:17:23Z","lvl":"INFO","log":"c.h.b.s.DispatchService","msg":"slot booked depot=RTM dock=4 ref=HLF-26-T0011"}
+{"ts":"2026-11-02T08:24:36Z","lvl":"INFO","log":"c.h.b.s.DispatchService","msg":"slot booked depot=IMM dock=5 ref=HLF-26-T0012"}
+{"ts":"2026-11-02T08:31:49Z","lvl":"INFO","log":"c.h.b.s.DispatchService","msg":"slot booked depot=HAM dock=6 ref=HLF-26-T0013"}
+{"ts":"2026-11-02T08:38:02Z","lvl":"INFO","log":"c.h.b.s.DispatchService","msg":"slot booked depot=GDY dock=7 ref=HLF-26-T0014"}
+{"ts":"2026-11-02T08:45:15Z","lvl":"INFO","log":"c.h.b.s.DispatchService","msg":"slot booked depot=FXT dock=8 ref=HLF-26-T0015"}
+{"ts":"2026-11-02T08:52:28Z","lvl":"INFO","log":"c.h.b.s.DispatchService","msg":"slot booked depot=RTM dock=1 ref=HLF-26-T0016"}
+{"ts":"2026-11-02T08:59:41Z","lvl":"INFO","log":"c.h.b.s.DispatchService","msg":"slot booked depot=IMM dock=2 ref=HLF-26-T0017"}
+{"ts":"2026-11-02T09:06:54Z","lvl":"INFO","log":"c.h.b.s.DispatchService","msg":"slot booked depot=HAM dock=3 ref=HLF-26-T0018"}
+{"ts":"2026-11-02T09:13:07Z","lvl":"INFO","log":"c.h.b.s.DispatchService","msg":"slot booked depot=GDY dock=4 ref=HLF-26-T0019"}
+{"ts":"2026-11-02T09:20:20Z","lvl":"WARN","log":"c.h.b.s.DispatchService","msg":"customs-docs attempt 1 failed for HLF-26-T0020: Read timed out"}
+{"ts":"2026-11-02T09:27:33Z","lvl":"INFO","log":"c.h.b.s.DispatchService","msg":"slot booked depot=RTM dock=6 ref=HLF-26-T0021"}
+{"ts":"2026-11-02T09:34:46Z","lvl":"INFO","log":"c.h.b.s.DispatchService","msg":"slot booked depot=IMM dock=7 ref=HLF-26-T0022"}
+{"ts":"2026-11-02T09:41:59Z","lvl":"INFO","log":"c.h.b.s.DispatchService","msg":"slot booked depot=HAM dock=8 ref=HLF-26-T0023"}
+{"ts":"2026-11-02T10:48:12Z","lvl":"INFO","log":"c.h.b.s.DispatchService","msg":"slot booked depot=GDY dock=1 ref=HLF-26-T0024"}
+{"ts":"2026-11-02T10:55:25Z","lvl":"INFO","log":"c.h.b.s.DispatchService","msg":"slot booked depot=FXT dock=2 ref=HLF-26-T0025"}
+{"ts":"2026-11-02T10:02:38Z","lvl":"INFO","log":"c.h.b.s.DispatchService","msg":"slot booked depot=RTM dock=3 ref=HLF-26-T0026"}
+{"ts":"2026-11-02T10:09:51Z","lvl":"INFO","log":"c.h.b.s.DispatchService","msg":"slot booked depot=IMM dock=4 ref=HLF-26-T0027"}
+{"ts":"2026-11-02T10:16:04Z","lvl":"INFO","log":"c.h.b.s.DispatchService","msg":"slot booked depot=HAM dock=5 ref=HLF-26-T0028"}
+{"ts":"2026-11-02T10:23:17Z","lvl":"INFO","log":"c.h.b.s.DispatchService","msg":"slot booked depot=GDY dock=6 ref=HLF-26-T0029"}
+{"ts":"2026-11-02T11:30:30Z","lvl":"INFO","log":"c.h.b.s.DispatchService","msg":"slot booked depot=FXT dock=7 ref=HLF-26-T0030"}
+{"ts":"2026-11-02T11:37:43Z","lvl":"INFO","log":"c.h.b.s.DispatchService","msg":"slot booked depot=RTM dock=8 ref=HLF-26-T0031"}
+{"ts":"2026-11-02T11:44:56Z","lvl":"INFO","log":"c.h.b.s.DispatchService","msg":"slot booked depot=IMM dock=1 ref=HLF-26-T0032"}
+{"ts":"2026-11-02T11:51:09Z","lvl":"WARN","log":"c.h.b.s.DispatchService","msg":"customs-docs attempt 1 failed for HLF-26-T0033: Read timed out"}
+{"ts":"2026-11-02T11:58:22Z","lvl":"INFO","log":"c.h.b.s.DispatchService","msg":"slot booked depot=GDY dock=3 ref=HLF-26-T0034"}
+{"ts":"2026-11-02T11:05:35Z","lvl":"INFO","log":"c.h.b.s.DispatchService","msg":"slot booked depot=FXT dock=4 ref=HLF-26-T0035"}
+{"ts":"2026-11-02T12:12:48Z","lvl":"INFO","log":"c.h.b.s.DispatchService","msg":"slot booked depot=RTM dock=5 ref=HLF-26-T0036"}
+{"ts":"2026-11-02T12:19:01Z","lvl":"INFO","log":"c.h.b.s.DispatchService","msg":"slot booked depot=IMM dock=6 ref=HLF-26-T0037"}
+{"ts":"2026-11-02T12:26:14Z","lvl":"INFO","log":"c.h.b.s.DispatchService","msg":"slot booked depot=HAM dock=7 ref=HLF-26-T0038"}
+{"ts":"2026-11-02T12:33:27Z","lvl":"INFO","log":"c.h.b.s.DispatchService","msg":"slot booked depot=GDY dock=8 ref=HLF-26-T0039"}

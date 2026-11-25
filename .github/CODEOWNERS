@@ -1,0 +1,10 @@
+# Code owners - reviewed by Engineering Ops each quarter
+/services/booking-service/   @harbourline/booking-squad
+/services/tracking-worker/   @harbourline/visibility
+/services/customs-docs/      @harbourline/compliance-eng
+/contracts/                  @harbourline/booking-squad
+/infra/                      @harbourline/platform-ops
+/ops/                        @harbourline/platform-ops
+/docs/policies/              @harbourline/compliance-eng
+/docs/runbooks/              @harbourline/platform-ops
+/.github/                    @harbourline/platform-ops

@@ -1,0 +1,2 @@
+---
+tracking_worker_exec: "{{ app_root }}/tracking-worker/venv/bin/hf-tracking-worker"

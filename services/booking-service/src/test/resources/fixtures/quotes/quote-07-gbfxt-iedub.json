@@ -1,0 +1,17 @@
+{
+  "origin": "GBFXT",
+  "destination": "IEDUB",
+  "mode": "SEA",
+  "equipment": "40GP",
+  "units": 1,
+  "onDate": "2026-10-01",
+  "items": [
+    {
+      "description": "Mixed pallets",
+      "packages": 11,
+      "grossKg": 350,
+      "volumeM3": 0.88,
+      "dangerous": false
+    }
+  ]
+}

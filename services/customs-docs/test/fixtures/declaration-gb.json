@@ -1,0 +1,22 @@
+{
+  "bookingRef": "HLF-26-FXGB01",
+  "exporterEori": "GB000000000000",
+  "origin": "NLRTM",
+  "destination": "GBFXT",
+  "shipTo": {
+    "name": "TEST-CONSIGNEE-GB01",
+    "address": "1 Test Street",
+    "city": "Testville",
+    "postcode": "ZZ99 9ZZ",
+    "country": "GB"
+  },
+  "items": [
+    {
+      "description": "Spare parts",
+      "hsCode": null,
+      "packages": 10,
+      "grossKg": 300,
+      "volumeM3": 0.8
+    }
+  ]
+}

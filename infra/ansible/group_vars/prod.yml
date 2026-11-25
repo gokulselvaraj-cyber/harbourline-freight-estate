@@ -1,0 +1,21 @@
+---
+hf_env: prod
+hf_domain: hf.internal
+spring_profile: prod
+node_env: production
+
+# customs-docs moved off 3000 when the depot scanner bridge took that port (CHG-4471, 2026-03)
+customs_docs_port: 3100
+customs_docs_base_url: "http://customs-docs.hf.internal:{{ customs_docs_port }}"
+
+db_host: hf-db-01.hf.internal
+mq_host: hf-mq-01.hf.internal
+tracking_db_host: hf-db-01.hf.internal
+
+# nightly pg_dump target (see playbooks/backup-db.yml)
+pg_backup_bucket: s3://hf-pg-backups-prod-use1
+pg_backup_region: us-east-1
+pg_backup_retention_days: 35
+
+notifyhub_url: https://api.notifyhub.example/v2/sms
+tls_cert_name: star_hf_internal

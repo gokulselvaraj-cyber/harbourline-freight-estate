@@ -1,0 +1,5 @@
+service: tracking-worker
+slos:
+  - name: eta-freshness
+    objective: 99
+    description: ETA updated within 5 minutes of a carrier event

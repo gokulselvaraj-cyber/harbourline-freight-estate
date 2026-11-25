@@ -1,0 +1,21 @@
+{
+ "title": "booking-overview",
+ "schemaVersion": 38,
+ "panels": [
+  {
+   "id": 1,
+   "type": "timeseries",
+   "title": "Bookings per hour"
+  },
+  {
+   "id": 2,
+   "type": "timeseries",
+   "title": "Quote latency p95"
+  },
+  {
+   "id": 3,
+   "type": "timeseries",
+   "title": "Customs pending"
+  }
+ ]
+}

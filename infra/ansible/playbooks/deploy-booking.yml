@@ -1,0 +1,21 @@
+---
+- name: Deploy booking
+  hosts: app_servers
+  become: true
+  serial: 1
+  vars:
+    deploy_version: "{{ version | default(booking_service_version_override | default(omit)) }}"
+  pre_tasks:
+    - name: Take node out of the edge pool
+      ansible.builtin.uri:
+        url: "http://hf-edge-01.{{ hf_domain }}/_pool/{{ inventory_hostname_short }}/drain"
+        method: POST
+      delegate_to: localhost
+  roles:
+    - booking_service
+  post_tasks:
+    - name: Put node back in the pool
+      ansible.builtin.uri:
+        url: "http://hf-edge-01.{{ hf_domain }}/_pool/{{ inventory_hostname_short }}/enable"
+        method: POST
+      delegate_to: localhost

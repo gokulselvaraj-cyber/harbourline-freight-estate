@@ -1,0 +1,21 @@
+{
+ "title": "tracking-overview",
+ "schemaVersion": 38,
+ "panels": [
+  {
+   "id": 1,
+   "type": "timeseries",
+   "title": "Carrier events by carrier"
+  },
+  {
+   "id": 2,
+   "type": "timeseries",
+   "title": "ETA shift histogram"
+  },
+  {
+   "id": 3,
+   "type": "timeseries",
+   "title": "SMS sent / failed"
+  }
+ ]
+}

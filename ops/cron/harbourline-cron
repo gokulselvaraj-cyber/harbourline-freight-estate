@@ -1,0 +1,7 @@
+# /etc/cron.d/harbourline on hf-db-01 (copied by hand, not managed by ansible yet)
+SHELL=/bin/bash
+MAILTO=platform-alerts@harbourline.example
+# m  h  dom mon dow user     command
+15  2  *   *   *   postgres psql -d booking -c "VACUUM (ANALYZE) booking;"
+# 40 2  *   *   *   postgres psql -d booking -c "SELECT purge_delivery_party();"   # disabled 2026-06-04 HF-1880, re-enable after audit
+50  2  *   *   0   postgres psql -d tracking -c "DELETE FROM tracking_event WHERE event_at < now() - interval '18 months';"
